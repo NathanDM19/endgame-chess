@@ -39,7 +39,7 @@ $('document').ready(function () {
     $(`#${i}`).click(function () {
       // Selecting and de-selecting a piece
       if (turn === "White" && board[i] > 10 && board[i] < 17) {
-        if (!pieceSelected) {
+        if (!pieceSelected && pieceSelected !== 0) {
           $(`#${i}`).css({background: "orange" })
           pieceSelected = i;
           showMoves(i, board[i])
@@ -51,7 +51,7 @@ $('document').ready(function () {
           }
         }
       } else if (turn === "Black" && board[i] > 0 && board[i] < 7) {
-        if (!pieceSelected) {
+        if (!pieceSelected && pieceSelected !== 0) {
           $(`#${i}`).css({ background: "orange" })
           pieceSelected = i;
           showMoves(i, board[i])
@@ -64,7 +64,7 @@ $('document').ready(function () {
         }
       }
       // Moving a piece
-      if (pieceSelected) {
+      if (pieceSelected || pieceSelected === 0) {
         if (legalMoves.includes(i)) {
           console.log(pieceSelected, i)
           $(`#${pieceSelected}`).html("")
