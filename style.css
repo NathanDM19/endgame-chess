@@ -1,0 +1,21 @@
+#gameBoard {
+  width: 640px;
+  height: 640px;
+  background: black;
+}
+.square {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  vertical-align: top;
+}
+.odd {
+  background: #f9db7a
+}
+.even {
+  background: #e4c444
+}
+.piece {
+  margin-top: 8px;
+  margin-left: 8px;
+}
