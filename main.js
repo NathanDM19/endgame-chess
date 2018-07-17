@@ -80,8 +80,8 @@ $('document').ready(function () {
           }
           boardTeam[i] = turn;
           board[i] = board[pieceSelected]
-          boardTeam[pieceSelected] = null;
-          board[pieceSelected] = null;
+          boardTeam[pieceSelected] = undefined;
+          board[pieceSelected] = undefined;
           $(`#${i}`).html("")
           $(`#${i}`).append(`<img class="piece" src="${turn.toLowerCase()}${piece}.png">`);
           for (let j = 0; j < 64; j++) {
@@ -244,8 +244,10 @@ function showMoves(square, type) {
         break;
       }
       $(`#${possibleMove}`).css({ background: "blue" })
+      console.log("Pushing " + possibleMove)
       legalMoves.push(possibleMove)
       if (possibleMove < 8 || board[possibleMove] < 10) {
+        console.log("Breaking!", possibleMove < 8, board[possibleMove] < 10)
         break;
       }
     }
