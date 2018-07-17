@@ -8,6 +8,8 @@
   height: 80px;
   display: inline-block;
   vertical-align: top;
+  box-sizing: border-box;
+  border: 1px solid black;
 }
 .odd {
   background: #f9db7a
